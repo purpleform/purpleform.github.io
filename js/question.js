@@ -74,7 +74,7 @@
 
 var privateQ = [{
     "type": "L",
-    "text": "每週平均自衛......",
+    "text": "每週平均自慰......",
     "point": ""
 }, {
     "type": "LQ",
