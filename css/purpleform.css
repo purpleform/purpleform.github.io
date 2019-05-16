@@ -1,0 +1,62 @@
+﻿.logo-header {
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    height: 170px;
+    margin: 20px 20px 20px 20px;
+    color: #7EF2C4;
+    line-height: 170px;
+    font-size: 3rem;
+}
+
+.logo-header-text {
+    font-size: 1rem;
+    color: #7EF2C4;
+}
+
+.tableN {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    background-color: #181260;
+    border-color: #4A3AF5;
+    border-radius: 10px;
+    border: 10px;
+}
+
+    .tableN th,
+    .tableN td {
+        padding: 0.75rem;
+        vertical-align: top;
+        /*border-top: 5px solid #4A3AF5;*/
+    }
+
+    .tableN thead tr th {
+        vertical-align: bottom;
+        border-radius: 10px;
+        border-bottom: 5px solid #4A3AF5;
+        /*border-top: 5px solid #4A3AF5;*/
+    }
+
+    .tableN tbody + tbody {
+        /*border-top: 2px solid #dee2e6;*/
+    }
+
+.table-textcolor {
+    font-size: 1em;
+    color: #7EF2C4;
+}
+
+.td-dark {
+    background-color: #140E4D;
+}
+
+.td-light {
+    background-color: #181260;
+}
+
+.td-total {
+    font-size: 1.6rem;
+}
+.tfoot-total {
+    font-size: 1.8rem;
+}
