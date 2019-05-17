@@ -180,9 +180,13 @@ function tempTableT(question, type) {
             else {
                 total += parseInt(question[i].point);
                 if (colorIndex % 2 == 0)
-                    temp += '<td class="td-light" style="text-align:right"><label class="checkbox-inline"><input class="checkPoint' + type + '" type="checkbox" value="' + question[i].point + '">' + question[i].point + '</label></td>';
+                    temp += '<td class="td-light" style="text-align:right"><label class="container"><input class="checkPoint' + type + '" type="checkbox" value="' + question[i].point + '">' + question[i].point + '<span class="checkmark"></span></label></td>';
+
+                //temp += '<td class="td-light" style="text-align:right"><label class="checkbox-inline"><input class="checkPoint' + type + '" type="checkbox" value="' + question[i].point + '">' + question[i].point + '</label></td>';
                 else
-                    temp += '<td class="td-dark" style="text-align:right"><label class="checkbox-inline"><input class="checkPoint' + type + '" type="checkbox" value="' + question[i].point + '">' + question[i].point + '</label></td>';
+                    temp += '<td class="td-dark" style="text-align:right"><label class="container"><input class="checkPoint' + type + '" type="checkbox" value="' + question[i].point + '">' + question[i].point + '<span class="checkmark"></span></label></td>';
+
+                //temp += '<td class="td-dark" style="text-align:right"><label class="checkbox-inline"><input class="checkPoint' + type + '" type="checkbox" value="' + question[i].point + '">' + question[i].point + '</label></td>';
             }
         } else {
             if (colorIndex % 2 == 0)
