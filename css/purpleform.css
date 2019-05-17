@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 992px) {
     .logo-header {
         background-image: url(../img/logo.png);
         background-size: contain;
@@ -11,7 +11,7 @@
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
     .logo-header {
         background-image: url(../img/logo.png);
         background-size: contain;
@@ -21,19 +21,6 @@
         color: #7EF2C4;
         line-height: 170px;
         font-size: 2.2rem;
-    }
-}
-
-@media only screen and (max-width: 320px) {
-    .logo-header {
-        background-image: url(../img/logo.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        height: 170px;
-        margin: 20px 20px 20px 20px;
-        color: #7EF2C4;
-        line-height: 170px;
-        font-size: 1.5rem;
     }
 }
 

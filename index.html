@@ -22,17 +22,26 @@
     <header class="masthead">
         <div class="container h-100">
             <div class="row h-100">
-                <div class="col-sm-8 my-auto">
+                <div class="col-md-8 my-auto">
                     <div class="header-content mx-auto logo-header">
                         <p>淫蕩指數紫評表v1.1(繁)</p>
                     </div>
                 </div>
-                <div class="col-sm-4 my-auto">
+                <div class="col-md-4 my-auto">
                     <div class="row">
-                        <div class="col-sm-4 logo-header-text">
-                            <a>你是<br />男生/女生</a>
+                        <div class="col-md-5 logo-header-text">
+                            <a>你是<br />
+                                <label class="radio">
+                                    <input type="radio" name="answer">
+                                    男生
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="answer">
+                                    女生
+                                </label>
+                            </a>
                         </div>
-                        <div class="col-sm-8 logo-header-text">
+                        <div class="col-md-7 logo-header-text">
                             <a>在相應的分數上填塗，最後把填塗得分數相加。不屬於範圍的就等於0分。<br />範例：20 x 5 + 10 x 2 = 120。</a>
                         </div>
                     </div>
@@ -67,9 +76,15 @@
     <script src="js/jquery.3.2.1.min.js"></script>
     <script>
         $(document).ready(initPurpleForm);
-        $('#img2DIV').animate({ opacity: 0.2 }, 1500);
-        $('#img3DIV').animate({ opacity: 0.2 }, 1500);
-        $('#img4DIV').animate({ opacity: 0.2 }, 1500);
+        $('#img2DIV').animate({
+            opacity: 0.2
+        }, 1500);
+        $('#img3DIV').animate({
+            opacity: 0.2
+        }, 1500);
+        $('#img4DIV').animate({
+            opacity: 0.2
+        }, 1500);
     </script>
 </body>
 
