@@ -1,4 +1,8 @@
-﻿var publicQ = [{
+/*
+
+ */
+
+var publicQ = [{
     "type": "Q",
     "text": "喜歡並且會看成人內容",
     "point": "5"
@@ -166,6 +170,6 @@ var privateQ = [{
     "point": "20"
 }, {
     "type": "T",
-    "text": "私下里指數",
+    "text": "私下指數",
     "point": ""
 }]

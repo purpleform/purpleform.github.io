@@ -1,4 +1,4 @@
-﻿function initPurpleForm() {
+function initPurpleForm() {
     outputTable();
 
     var publicTotal = parseInt(document.getElementById("publicTotalR").innerHTML);
@@ -7,7 +7,7 @@
     var divsPu = document.querySelectorAll('.checkPointpublicTotal');
     var divsPr = document.querySelectorAll('.checkPointprivateTotal');
     for (var i = 0; i < divsPu.length; ++i) {
-        divsPu[i].addEventListener("change", function () {
+        divsPu[i].addEventListener("change", function() {
             var PuTotal = parseInt(document.getElementById("publicTotal").innerHTML);
             var TotalL = parseInt(document.getElementById("TotalL").innerHTML);
             TotalR
@@ -24,7 +24,7 @@
         })
     };
     for (var i = 0; i < divsPr.length; ++i) {
-        divsPr[i].addEventListener("change", function () {
+        divsPr[i].addEventListener("change", function() {
             var PrTotal = parseInt(document.getElementById("privateTotal").innerHTML);
             var TotalL = parseInt(document.getElementById("TotalL").innerHTML);
             TotalR
@@ -41,6 +41,7 @@
         })
     };
 }
+
 function outputTable() {
     var temp = "";
     temp += '<table class="tableN table-textcolor" id="purple">';
@@ -62,6 +63,7 @@ function outputThead() {
     temp += '</thead>';
     return temp;
 }
+
 function outputTfoot() {
     var temp = "";
     temp += '<tfoot>';
@@ -83,7 +85,7 @@ function outputTbody() {
     return temp;
 }
 
-function tempTable(question,type) {
+function tempTable(question, type) {
     var temp = "";
     var colorIndex = 0;
     var total = 0;
@@ -93,7 +95,10 @@ function tempTable(question,type) {
         temp += '<tr>';
         if (question[i].type != "T") {
             if (i == 0)
-                temp += '<td rowspan="' + question.length + '" style="font-size:3em;background-color:#4A3AF5;color:black;font-weight:bolder;border-bottom: 5px solid #000000;">平日</td>';
+                if (type == "publicTotal")
+                    temp += '<td rowspan="' + question.length + '" style="font-size:3em;background-color:#4A3AF5;color:black;font-weight:bolder;border-bottom: 5px solid #000000;">平日</td>';
+                else
+                    temp += '<td rowspan="' + question.length + '" style="font-size:3em;background-color:#4A3AF5;color:black;font-weight:bolder;border-bottom: 5px solid #000000;">私下</td>';
 
             if (colorIndex % 2 == 0)
                 temp += '<td class="td-light">' + question[i].text + '</td>';
