@@ -21,6 +21,7 @@ function initPurpleForm() {
             }
             document.getElementById("publicTotal").innerHTML = PuTotal;
             document.getElementById("TotalL").innerHTML = TotalL;
+            ChangeBadge();
         })
     };
     for (var i = 0; i < divsPr.length; ++i) {
@@ -38,6 +39,7 @@ function initPurpleForm() {
             }
             document.getElementById("privateTotal").innerHTML = PrTotal;
             document.getElementById("TotalL").innerHTML = TotalL;
+            ChangeBadge();
         })
     };
 }
@@ -71,7 +73,7 @@ function ChangeBadge() {
             opacity: 0.2
         }, 1500);
     } else if (TotalL < 550) {
-        $('#img1DIV').animate({
+        $('#img1DIV ').animate({
             opacity: 0.2
         }, 1500);
         $('#img2DIV').animate({
@@ -83,20 +85,20 @@ function ChangeBadge() {
         $('#img4DIV').animate({
             opacity: 0.2
         }, 1500);
-    } else
+    } else {
         $('#img1DIV').animate({
             opacity: 0.2
         }, 1500);
-    $('#img2DIV').animate({
-        opacity: 0.2
-    }, 1500);
-    $('#img3DIV').animate({
-        opacity: 0.2
-    }, 1500);
-    $('#img4DIV').animate({
-        opacity: 1
-    }, 1500);
-}
+        $('#img2DIV').animate({
+            opacity: 0.2
+        }, 1500);
+        $('#img3DIV').animate({
+            opacity: 0.2
+        }, 1500);
+        $('#img4DIV').animate({
+            opacity: 1
+        }, 1500);
+    }
 }
 
 function outputTable() {
