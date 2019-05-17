@@ -146,61 +146,9 @@ function outputTfootT() {
 function outputTbodyT() {
     var temp = "";
     temp += '<tbody>';
-    temp += tempTableT(publicQT, "publicTotal");
-    temp += tempTableT(privateQT, "privateTotal");
+    temp += tempTable(publicQT, "publicTotal");
+    temp += tempTable(privateQT, "privateTotal");
     temp += '</tbody>';
-    return temp;
-}
-
-function tempTableT(question, type) {
-    var temp = "";
-    var colorIndex = 0;
-    var total = 0;
-    for (var i = 0; i < question.length; i++) {
-        if (question[i].type != "LQ")
-            colorIndex++;
-        temp += '<tr>';
-        if (question[i].type != "T") {
-            if (i == 0)
-                if (type == "publicTotal")
-                    temp += '<td rowspan="' + question.length + '" style="font-size:3em;background-color:#4A3AF5;color:black;font-weight:bolder;border-bottom: 5px solid #000000;">平日</td>';
-                else
-                    temp += '<td rowspan="' + question.length + '" style="font-size:3em;background-color:#4A3AF5;color:black;font-weight:bolder;border-bottom: 5px solid #4A3AF5;">私下</td>';
-
-            if (colorIndex % 2 == 0)
-                temp += '<td class="td-light">' + question[i].text + '</td>';
-            else
-                temp += '<td class="td-dark">' + question[i].text + '</td>';
-
-            if (question[i].point == "")
-                if (colorIndex % 2 == 0)
-                    temp += '<td class="td-light"></td>';
-                else
-                    temp += '<td class="td-dark"></td>';
-            else {
-                total += parseInt(question[i].point);
-                if (colorIndex % 2 == 0)
-                    temp += '<td class="td-light" style="text-align:right"><label class="container"><input class="checkPoint' + type + '" type="checkbox" value="' + question[i].point + '">' + question[i].point + '<span class="checkmark"></span></label></td>';
-
-                //temp += '<td class="td-light" style="text-align:right"><label class="checkbox-inline"><input class="checkPoint' + type + '" type="checkbox" value="' + question[i].point + '">' + question[i].point + '</label></td>';
-                else
-                    temp += '<td class="td-dark" style="text-align:right"><label class="container"><input class="checkPoint' + type + '" type="checkbox" value="' + question[i].point + '">' + question[i].point + '<span class="checkmark"></span></label></td>';
-
-                //temp += '<td class="td-dark" style="text-align:right"><label class="checkbox-inline"><input class="checkPoint' + type + '" type="checkbox" value="' + question[i].point + '">' + question[i].point + '</label></td>';
-            }
-        } else {
-            if (colorIndex % 2 == 0)
-                temp += '<td class="td-light td-total" style="text-align:right;">' + question[i].text + '：</td>';
-            else
-                temp += '<td class="td-dark td-total" style="text-align:right";>' + question[i].text + '：</td>';
-
-            if (colorIndex % 2 == 0)
-                temp += '<td class="td-light td-total" style="text-align:right;border-bottom: 5px solid #4A3AF5;"><label id="' + type + '">0</label> / <label id="' + type + 'R">' + total + '</label></td>';
-            else
-                temp += '<td class="td-dark td-total" style="text-align:right;border-bottom: 5px solid #4A3AF5;"><label id="' + type + '">0</label> / <label id="' + type + 'R">' + total + '</label></td>';
-        }
-        temp += '</tr>';
-    }
     return temp;
 }
 
@@ -241,13 +189,13 @@ function outputTfootS() {
 function outputTbodyS() {
     var temp = "";
     temp += '<tbody>';
-    temp += tempTableS(publicQS, "publicTotal");
-    temp += tempTableS(privateQS, "privateTotal");
+    temp += tempTable(publicQS, "publicTotal");
+    temp += tempTable(privateQS, "privateTotal");
     temp += '</tbody>';
     return temp;
 }
 
-function tempTableS(question, type) {
+function tempTable(question, type) {
     var temp = "";
     var colorIndex = 0;
     var total = 0;
@@ -275,9 +223,13 @@ function tempTableS(question, type) {
             else {
                 total += parseInt(question[i].point);
                 if (colorIndex % 2 == 0)
-                    temp += '<td class="td-light" style="text-align:right"><label class="checkbox-inline"><input class="checkPoint' + type + '" type="checkbox" value="' + question[i].point + '">' + question[i].point + '</label></td>';
+                    temp += '<td class="td-light" style="text-align:right"><label class="container"><input class="checkPoint' + type + '" type="checkbox" value="' + question[i].point + '">' + question[i].point + '<span class="checkmark"></span></label></td>';
+
+                //temp += '<td class="td-light" style="text-align:right"><label class="checkbox-inline"><input class="checkPoint' + type + '" type="checkbox" value="' + question[i].point + '">' + question[i].point + '</label></td>';
                 else
-                    temp += '<td class="td-dark" style="text-align:right"><label class="checkbox-inline"><input class="checkPoint' + type + '" type="checkbox" value="' + question[i].point + '">' + question[i].point + '</label></td>';
+                    temp += '<td class="td-dark" style="text-align:right"><label class="container"><input class="checkPoint' + type + '" type="checkbox" value="' + question[i].point + '">' + question[i].point + '<span class="checkmark"></span></label></td>';
+
+                //temp += '<td class="td-dark" style="text-align:right"><label class="checkbox-inline"><input class="checkPoint' + type + '" type="checkbox" value="' + question[i].point + '">' + question[i].point + '</label></td>';
             }
         } else {
             if (colorIndex % 2 == 0)
