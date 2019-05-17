@@ -4,7 +4,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>紫評表</title>
+    <title id="htmlTitle">紫評表</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="css/bootstrap.min.css" rel="stylesheet" />
@@ -22,15 +22,15 @@
     <header class="masthead">
         <div class="container h-100">
             <div class="row h-100">
-                <div class="col-md-8 my-auto">
+                <div class="col-md-9 my-auto">
                     <div class="header-content mx-auto logo-header">
-                        <p>淫蕩指數紫評表v1.1(繁)</p>
+                        <p id="Title">淫蕩指數紫評表v1.1</p>
                     </div>
                 </div>
-                <div class="col-md-4 my-auto">
+                <div class="col-md-3 my-auto">
                     <div class="row">
-                        <div class="col-md-5 logo-header-text">
-                            <a>你是<br />
+                        <div class="col-md-12 logo-header-text">
+                            <a>我是<br />
                                 <label class="radio">
                                     <input type="radio" name="answer">
                                     男生
@@ -41,15 +41,21 @@
                                 </label>
                             </a>
                         </div>
-                        <div class="col-md-7 logo-header-text">
+                        <!--div class="col-md-7 logo-header-text">
                             <a>在相應的分數上填塗，最後把填塗得分數相加。不屬於範圍的就等於0分。<br />範例：20 x 5 + 10 x 2 = 120。</a>
-                        </div>
+                        </div-->
                     </div>
+                </div>
+                <div class="col-5 my-auto" style="padding-top:1rem;padding-bottom:1rem">
+                    <select class="form-control" id="languageSelect" onchange="languageSelect()">
+                        <option>繁體</option>
+                        <option>简体</option>
+                    </select>
                 </div>
                 <div class="col-lg-12 my-auto purpleform-border" id="purpleform">
                 </div>
                 <div class="col-lg-12 my-auto" style="padding-bottom:1rem;">
-                    <a class="btn btn-warning btn-lg" style="font-weight: 900;">◇ 淫蕩指數徽章</a>
+                    <a class="btn btn-warning btn-lg" style="font-weight: 900;" id="badgeA">◇ 淫蕩指數徽章</a>
                 </div>
                 <div class="col-lg-3 my-auto" id="img1DIV">
                     <img src="img/1.png" width="100%"></img>
@@ -63,8 +69,7 @@
                 <div class="col-lg-3 my-auto" id="img4DIV">
                     <img src="img/4.png" width="100%"></img>
                 </div>
-                <div class="col-lg-9 my-auto logo-header-text" style="padding-top:1rem">
-                    <p>誒，原來你獲得了這一枚徽章呀？恭喜哦！ ～《簡稱樂園》在這裡不鼓勵任何關係中在非雙方知情同意或非“開放式關係”下的綠帽，多P行為。要珍惜身邊的每一個人，同時也要記得愛護保護好自己身心噢。 ——— 來自射雞師的一番話 / 我們的推特 <a href="https://twitter.com/CF_IS_HERE">@CF_IS_HERE</a></p>
+                <div class="col-lg-9 my-auto logo-header-text" style="padding-top:1rem" id="footerDiv">
                 </div>
             </div>
         </div>
@@ -72,10 +77,11 @@
 
     <script src="js/bootstrap.min.js"></script>
     <script src="js/purpleform.js"></script>
-    <script src="js/question.js"></script>
+    <script src="js/questionT.js"></script>
+    <script src="js/questionS.js"></script>
     <script src="js/jquery.3.2.1.min.js"></script>
     <script>
-        $(document).ready(initPurpleForm);
+        $(document).ready(languageSelect);
         $('#img2DIV').animate({
             opacity: 0.2
         }, 1500);
@@ -85,6 +91,23 @@
         $('#img4DIV').animate({
             opacity: 0.2
         }, 1500);
+
+        function languageSelect() {
+            var language = document.getElementById("languageSelect").value;
+            if (language == "繁體") {
+                document.getElementById("htmlTitle").innerHTML = '紫評表';
+                document.getElementById("Title").innerHTML = '淫蕩指數紫評表v1.1(繁)';
+                document.getElementById("badgeA").innerHTML = '◇ 淫蕩指數徽章';
+                document.getElementById("footerDiv").innerHTML = '<p>誒，原來你獲得了這一枚徽章呀？恭喜哦！ ～《簡稱樂園》在這裡不鼓勵任何關係中在非雙方知情同意或非“開放式關係”下的綠帽，多P行為。要珍惜身邊的每一個人，同時也要記得愛護保護好自己身心噢。 ——— 來自射雞師的一番話 / 我們的推特 <a href="https://twitter.com/CF_IS_HERE">@CF_IS_HERE</a></p>';
+                initPurpleFormT();
+            } else if (language == "简体") {
+                document.getElementById("htmlTitle").innerHTML = '紫评表';
+                document.getElementById("Title").innerHTML = '淫荡指数紫评表v1.1(简)';
+                document.getElementById("badgeA").innerHTML = '◇ 淫荡指数徽章';
+                document.getElementById("footerDiv").innerHTML = '<p>诶，原来你获得了这一枚徽章呀？恭喜哦！ ～《简称乐园》在这裡不鼓励任何关係中在非双方知情同意或非“开放式关係”下的绿帽，多P行为。要珍惜身边的每一个人，同时也要记得爱护保护好自己身心噢。 ——— 来自射鸡师的一番话 / 我们的推特 <a href="https://twitter.com/CF_IS_HERE">@CF_IS_HERE</a></p>';
+                initPurpleFormS();
+            }
+        }
     </script>
 </body>
 
