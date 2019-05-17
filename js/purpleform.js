@@ -42,6 +42,63 @@ function initPurpleForm() {
     };
 }
 
+function ChangeBadge() {
+    var TotalL = parseInt(document.getElementById("TotalL").innerHTML);
+    if (TotalL < 150) {
+        $('#img1DIV').animate({
+            opacity: 1
+        }, 1500);
+        $('#img2DIV').animate({
+            opacity: 0.2
+        }, 1500);
+        $('#img3DIV').animate({
+            opacity: 0.2
+        }, 1500);
+        $('#img4DIV').animate({
+            opacity: 0.2
+        }, 1500);
+    } else if (TotalL < 350) {
+        $('#img1DIV').animate({
+            opacity: 0.2
+        }, 1500);
+        $('#img2DIV').animate({
+            opacity: 1
+        }, 1500);
+        $('#img3DIV').animate({
+            opacity: 0.2
+        }, 1500);
+        $('#img4DIV').animate({
+            opacity: 0.2
+        }, 1500);
+    } else if (TotalL < 550) {
+        $('#img1DIV').animate({
+            opacity: 0.2
+        }, 1500);
+        $('#img2DIV').animate({
+            opacity: 0.2
+        }, 1500);
+        $('#img3DIV').animate({
+            opacity: 1
+        }, 1500);
+        $('#img4DIV').animate({
+            opacity: 0.2
+        }, 1500);
+    } else
+        $('#img1DIV').animate({
+            opacity: 0.2
+        }, 1500);
+    $('#img2DIV').animate({
+        opacity: 0.2
+    }, 1500);
+    $('#img3DIV').animate({
+        opacity: 0.2
+    }, 1500);
+    $('#img4DIV').animate({
+        opacity: 1
+    }, 1500);
+}
+}
+
 function outputTable() {
     var temp = "";
     temp += '<table class="tableN table-textcolor" id="purple">';
@@ -68,9 +125,9 @@ function outputTfoot() {
     var temp = "";
     temp += '<tfoot>';
     temp += '<tr>';
-    temp += '<th width="5%" style="text-align:center"></th>';
-    temp += '<th width="70%" style="text-align:right" class="tfoot-total">總指數：</th>';
-    temp += '<th width="20%" style="text-align:right" class="tfoot-total"><label id="TotalL">0</label> / <label id="TotalR">0</label></th>';
+    temp += '<th width="5%" style="text-align:center;background-color:#4A3AF5;"></th>';
+    temp += '<th width="70%" style="text-align:right;" class="tfoot-total">總指數：</th>';
+    temp += '<th width="20%" style="text-align:right;" class="tfoot-total"><label id="TotalL">0</label> / <label id="TotalR">0</label></th>';
     temp += '</tr>';
     temp += '</tfoot>';
     return temp;
@@ -98,7 +155,7 @@ function tempTable(question, type) {
                 if (type == "publicTotal")
                     temp += '<td rowspan="' + question.length + '" style="font-size:3em;background-color:#4A3AF5;color:black;font-weight:bolder;border-bottom: 5px solid #000000;">平日</td>';
                 else
-                    temp += '<td rowspan="' + question.length + '" style="font-size:3em;background-color:#4A3AF5;color:black;font-weight:bolder;border-bottom: 5px solid #000000;">私下</td>';
+                    temp += '<td rowspan="' + question.length + '" style="font-size:3em;background-color:#4A3AF5;color:black;font-weight:bolder;border-bottom: 5px solid #4A3AF5;">私下</td>';
 
             if (colorIndex % 2 == 0)
                 temp += '<td class="td-light">' + question[i].text + '</td>';
@@ -119,14 +176,14 @@ function tempTable(question, type) {
             }
         } else {
             if (colorIndex % 2 == 0)
-                temp += '<td class="td-light td-total" style="text-align:right">' + question[i].text + '：</td>';
+                temp += '<td class="td-light td-total" style="text-align:right;">' + question[i].text + '：</td>';
             else
-                temp += '<td class="td-dark td-total" style="text-align:right">' + question[i].text + '：</td>';
+                temp += '<td class="td-dark td-total" style="text-align:right";>' + question[i].text + '：</td>';
 
             if (colorIndex % 2 == 0)
-                temp += '<td class="td-light td-total" style="text-align:right"><label id="' + type + '">0</label> / <label id="' + type + 'R">' + total + '</label></td>';
+                temp += '<td class="td-light td-total" style="text-align:right;border-bottom: 5px solid #4A3AF5;"><label id="' + type + '">0</label> / <label id="' + type + 'R">' + total + '</label></td>';
             else
-                temp += '<td class="td-dark td-total" style="text-align:right"><label id="' + type + '">0</label> / <label id="' + type + 'R">' + total + '</label></td>';
+                temp += '<td class="td-dark td-total" style="text-align:right;border-bottom: 5px solid #4A3AF5;"><label id="' + type + '">0</label> / <label id="' + type + 'R">' + total + '</label></td>';
         }
         temp += '</tr>';
     }
