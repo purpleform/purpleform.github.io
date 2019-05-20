@@ -1,4 +1,4 @@
-var publicQS = [{
+var publicQT = [{
     "type": "Q",
     "text": "1. 喜歡並且會看成人內容",
     "point": "5"
@@ -88,7 +88,7 @@ var publicQS = [{
     "point": ""
 }]
 
-var privateQS = [{
+var privateQT = [{
     "type": "L",
     "text": "17. 每週平均自慰......（單選）",
     "point": ""
