@@ -1,0 +1,339 @@
+@media only screen and (min-width: 992px) {
+    .logo-header {
+        background-image: url(../img/logo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 170px;
+        margin: 20px 20px 20px 20px;
+        color: #7EF2C4;
+        line-height: 170px;
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 501px){
+    .logo-header {
+        background-image: url(../img/logo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 170px;
+        margin: 20px 20px 20px 20px;
+        color: #7EF2C4;
+        line-height: 170px;
+        font-size: 2.2rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .logo-header {
+        background-image: url(../img/logo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 170px;
+        margin: 20px 20px 20px 20px;
+        color: #7EF2C4;
+        line-height: 170px;
+        font-size: 2rem;
+    }
+}
+
+.logo-header-text {
+    font-size: 1rem;
+    color: #7EF2C4;
+}
+
+.purpleform-border {}
+
+.tableN {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    background-color: #181260;
+    border-top: 5px solid #4A3AF5;
+    border-left: 5px solid #4A3AF5;
+    border-bottom: 5px solid #4A3AF5;
+    border-right: 5px solid #4A3AF5;
+}
+
+.tableN th {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-bottom: 5px solid #4A3AF5;
+}
+
+.tableN td {
+    padding: 0.75rem;
+    vertical-align: top;
+}
+
+.tableN thead tr th {
+    vertical-align: bottom;
+}
+
+.table-textcolor {
+    font-size: 1em;
+    color: #7EF2C4;
+}
+
+.td-dark {
+    background-color: #140E4D;
+}
+
+.td-light {
+    background-color: #181260;
+}
+
+.td-total {
+    font-size: 1.6rem;
+}
+
+.tfoot-total {
+    font-size: 1.8rem;
+}
+
+/* The container */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+
+/* The container */
+.radiocontainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radiocontainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.radiocheckmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radiocontainer:hover input ~ .radiocheckmark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radiocontainer input:checked ~ .radiocheckmark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radiocheckmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radiocontainer input:checked ~ .radiocheckmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radiocontainer .radiocheckmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+
+.label--checkbox,
+.label--radio {
+  position: relative;
+
+  margin: .5rem;
+
+  font-family: Arial, sans-serif;
+  line-height: 135%;
+
+  cursor: pointer;
+}
+
+.checkbox {
+  position: relative;
+  top: rem(-6);
+
+  margin: 0 1rem 0 0 ;
+
+  cursor: pointer;
+
+  &:before {
+		@include transition(transform .4s cubic-bezier(.45,1.8,.5,.75));
+     @include transform(rotate(-45deg) scale(0, 0));
+
+		content: "";
+
+		position: absolute;
+		left: rem(3);
+     top: rem(2);
+		z-index: 1;
+
+		width: rem(12);
+		height: rem(6);
+
+		border: 2px solid $primaryColor;
+     border-top-style: none;
+  	 border-right-style: none;
+  }
+
+  &:checked {
+    &:before {
+       @include transform(rotate(-45deg) scale(1, 1));
+      }
+  }
+
+  &:after {
+    content: "";
+
+    position: absolute;
+    top: rem(-2);
+    left: 0;
+
+    width: 1rem;
+    height: 1rem;
+
+    background: #fff;
+
+    border: 2px solid $secondaryColor;
+
+    cursor: pointer;
+  }
+}
+
+.radio {
+  position: relative;
+
+  margin: 0 1rem 0 0 ;
+
+  cursor: pointer;
+
+  &:before {
+    @include transition(transform .4s cubic-bezier(.45,1.8,.5,.75));
+    @include transform(scale(0,0));
+
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: rem(2);
+    z-index: 1;
+
+    width: rem(12);
+    height: rem(12);
+
+    background: $primaryColor;
+
+    border-radius: 50%;
+  }
+
+  &:checked {
+    &:before {
+     @include transform(scale(1,1));
+    }
+  }
+
+  &:after {
+    content: "";
+
+    position: absolute;
+    top: rem(-4);
+    left: rem(-2);
+
+    width: 1rem;
+    height: 1rem;
+
+    background: #fff;
+
+    border: 2px solid $secondaryColor;
+    border-radius: 50%;
+  }
+}
